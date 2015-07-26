@@ -1,13 +1,17 @@
 package com.example.pratham;
 
+import java.io.IOException;
+
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.telephony.SmsMessage;
@@ -61,11 +65,32 @@ public class IncomingSms extends BroadcastReceiver {
 					}
 
 				}
-				HttpClient Client = new DefaultHttpClient();
-				String url = IncomingSms.IP + "/registration.jsp?u="
-						+ IncomingSms.message + "p=" + senderNum;
-				HttpGet httpget = new HttpGet(url);
-				Client.execute(httpget);
+				new Thread(new Runnable() {
+					
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						HttpClient Client = new DefaultHttpClient();
+						String url = IncomingSms.IP + "/reg.jsp?u="
+								+ IncomingSms.message.trim() + "&p=" + senderNum.substring(3);
+						HttpGet httpget = new HttpGet(url);
+						ResponseHandler<String> responseHandler = new BasicResponseHandler();
+		                String res = null;
+						try {
+//							res = Client.execute(httpget, responseHandler);
+							Client.execute(httpget);
+						} catch (ClientProtocolException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+		                
+		                //android.util.Log.d("Response",res);
+					}
+				}).start();
+				
 
 				SmsManager sms = SmsManager.getDefault();
 				sms.sendTextMessage(
