@@ -1,0 +1,264 @@
+<html>
+<head>
+   <title> REGISTRATION </title>
+<link href='http://fonts.googleapis.com/css?family=Roboto:700italic' rel='stylesheet' type='text/css'>
+<style>
+h2 {font-family: 'Roboto', sans-serif;}
+</style>
+<script type="text/javascript">
+
+  function validate()
+  {
+   var namereg=new RegExp("^[A-Za-z]*$");
+   var phreg=new RegExp("^\\d{10}$");
+   var mailreg=new RegExp("\\w+\.?\\w+@\\w+\.[a-z]{2,3}$");
+   var i,sexchk=false,lchk=false,dchk=false,mchk=false,ychk=false; 
+  if(document.myform.fname.value=="")
+     {
+      alert("name canot be empty");
+      document.myform.fname.focus();
+      return false;
+     }
+     else if(!namereg.test(document.myform.fname.value))
+            {
+             alert("enter valid name");
+             document.myform.fname.focus();
+             return false;
+            } 
+if(document.myform.mname.value=="")
+     {
+      alert("name canot be empty");
+      document.myform.mname.focus();
+      return false;
+     }
+     else if(!namereg.test(document.myform.mname.value))
+            {
+             alert("enter valid name");
+             document.myform.mname.focus();
+             return false;
+            } 
+if(document.myform.lname.value=="")
+     {
+      alert("name canot be empty");
+      document.myform.lname.focus();
+      return false;
+     }
+     else if(!namereg.test(document.myform.lname.value))
+            {
+             alert("enter valild name");
+             document.myform.lname.focus();
+             return false;
+            } 
+if(document.myform.sid.value=="")
+      {
+       alert("please enter User Id");
+       document.myform.sid.focus();
+       return false;
+      }
+       else if((document.myform.sid.value).length<9)
+            {
+             alert("contains atleast 6 digits");
+             document.myform.sid.focus();
+             return false;
+            }
+     if(document.myform.password.value=="")
+      {
+       alert("please enter password");
+       document.myform.password.focus();
+       return false;
+      }
+       else if((document.myform.password.value).length<6)
+            {
+             alert("contains atleast 6 characters");
+             document.myform.password.focus();
+             return false;
+            }
+      if(document.myform.emailid.value=="")
+        {
+         alert("please enter id");
+         document.myform.emailid.focus();
+         return false;
+        }
+        else if(!mailreg.test(document.myform.emialid.value))
+            {
+             alert("enter valid email id");
+             document.myform.emailid.focus();
+             return false;
+            }
+    if(document.myform.phno.value=="")
+      {
+       alert("please enter phone number");
+       document.myform.phno.focus();
+       return false;
+      }
+     else if(!phreg.test(document.myform.phno.value))
+            {
+             alert("enter valid phone number");
+             document.myform.phno.focus();
+             return false;
+            }
+       for(i=0;i<document.myform.sex.length;i++)
+         if(document.myform.sex[i].checked)
+            sexchk=true;
+          if(!sexchk)
+            {
+             alert("please choose sex");
+             document.myform.sex[0].focus();
+             return false;
+            }
+        
+       
+     return true;
+  } 
+ </script> 
+</head>
+<body background="simple-wallpaper-7.jpg">
+
+
+ <form name="myform" onsubmit="return validate()" saction="registration.jsp" method="get">
+ <table align="center" > 
+<img src="register.jpg" height="150" width="1200" class="acb">
+
+<caption><marquee><h2> WELCOME  TO  REGISTRATION </h2></marquee></caption>
+
+<tr>
+<td><font size="3" color="black"><b>SID</b></font></td>
+<td><input type="text" name="sid" maxlength="25" size="15"></td></tr>
+
+<tr><td><b>First Name</b></td>
+<td><input type="text" name="fname" maxlength="25" size="15"></td></tr>
+ <tr><td><b>Middle Name</b></td>
+<td><input type="text" name="mname" maxlength="25" size="15"></td></tr>
+<tr><td><b>Last Name</b></td>
+<td><input type="text" name="lname" maxlength="25" size="15"></td></tr>
+      
+           
+
+
+<tr>
+<td><font size="3"><b>Form Date</font></b></td>
+<td><input type="text" name="dos" maxlength="25" size="15"></td></tr>
+</tr>
+<td><b>Form Number</b></td>
+<td><input type="text" name="fno" maxlength="25" size="15"></td></tr>
+
+<tr>
+      <td><b>Phone Number</b></td>
+      <td><input type="text" name="phno" maxlength="25" size="15"></td>
+   </tr>
+
+<tr>
+	<td><b>Date Of Birth:</b></td>
+	<td><select name="date">
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option>
+	<option value="10">10</option>
+	<option value="11">11</option>
+	<option value="12">12</option>
+	<option value="13">13</option>
+	<option value="14">14</option>
+	<option value="15">15</option>
+	<option value="16">16</option>
+	<option value="17">17</option>
+	<option value="18">18</option>
+	<option value="19">19</option>
+	<option value="20">20</option>
+	<option value="21">21</option>	
+	<option value="22">22</option>
+	<option value="23">23</option>
+	<option value="24">24</option>
+	<option value="25">25</option>
+	<option value="26">26</option>
+	<option value="27">27</option>
+	<option value="28">28</option>
+	<option value="29">29</option>
+	<option value="30">30</option>
+	<option value="31">31</option>
+	 </select>
+	 <select size="1"name="month">
+	<option value="Jan">Jan</option>
+	<option value="feb">feb</option>
+	<option value="march">march</option>
+	<option value="april">april</option>
+	<option value="may">may</option>
+	<option value="june">june</option>
+	<option value="july">july</option>
+	<option value="aug">aug</option>
+	<option value="sep">sep</option>
+	<option value="oct">oct</option>
+	<option value="nov">nov</option>
+	<option value="dec">dec</option>
+	</select>
+	 <select size="1"name="year">
+	<option value="1994">1994</option>
+	<option value="1995">1995</option>
+	<option value="1996">1996</option>
+	<option value="1997">1997</option>
+	<option value="1998">1998</option>
+	<option value="1999">1999</option>
+	<option value="2000">2000</option>
+	<option value="2001">2001</option>
+	<option value="2002">2002</option>
+	<option value="2003">2003</option>
+	<option value="2004">2004</option>
+	<option value="2005">2005</option>
+	<option value="2006">2006</option>
+	<option value="2007">2007</option>
+	<option value="2008">2008</option>
+	<option value="2009">2009</option>	
+	<option value="2010">2010</option>
+	<option value="2011">2011</option>
+	<option value="2012">2012</option>
+	<option value="2013">2013</option>
+	<option value="2014">2014</option>
+	<option value="2015">2015</option>
+	</select>
+ 	</td>	
+	<tr>
+
+</tr>
+
+
+    
+   <tr>
+      <td><b>E-mail id</td>
+      <td><input type="text" name="emailid" maxlength="40" size="15"></td>   </tr>
+   
+
+   <tr>
+      <td><b>Gender</b></td>
+      <td><label><input type="radio" name="sex" value="male">male</label>
+      <label><input type="radio" name="sex" value="female">female</label></td>
+   </tr>
+
+   
+
+<tr>
+<tr>
+	
+        <td><b>Adress:</b></td>
+
+	<td><textarea cols="40" rows="5"></textarea></td>
+	</tr>
+	<tr>
+
+
+<td><input type="reset" name="reset" value="reset"></center></td>
+<td><center><input type="submit" name="submit" value="submit"></center></td>
+</tr>     
+
+</table>
+    
+     
+      
+
+</form>
+</body>
+</html>
